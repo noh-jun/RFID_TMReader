@@ -172,9 +172,16 @@ int main(int argc, char** argv)
   for (int t = 0; t < MAX_TAGS_PER_READ; ++t)
     epc_ptrs[t] = epc_storage[t];
 
+  // /* 안테나별 식별 필요해서 1개씩 번갈아 plan 설정 */
+  // last_rc = mercuryapi_set_read_plan_gen2(reader, ants, 2, -1);
+  // if (last_rc != MERCURYAPI_OK)
+  // {
+  //   usleep(200 * 1000);
+  // }
+
   while (!esc_pressed())
   {
-    for (int i = 0; i < 2; ++i)
+    for (int i = 0; i < 1; ++i)
     {
       int ant = ants[i];
 

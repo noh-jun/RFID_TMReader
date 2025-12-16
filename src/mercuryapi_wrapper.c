@@ -160,8 +160,18 @@ mercuryapi_result_t mercuryapi_set_read_plan_gen2(
     return map_status_ex(st);
   }
 
-  // read_power_dbm은 지금은 미적용(-1로 사용 권장).
-  (void)read_power_dbm;
+  
+  /* ✅ read power 적용: -1이면 변경 안 함 */
+  if (read_power_dbm >= 0) {
+    /* ThingMagic는 일반적으로 centi-dBm(= 1/100 dBm) 단위를 사용 */
+    int32_t power_cdbm = (int32_t)read_power_dbm;
+
+    st = TMR_paramSet(&reader->reader, TMR_PARAM_RADIO_READPOWER, &power_cdbm);
+    if (st != TMR_SUCCESS) {
+      mercuryapi__log_tmr_error(&reader->reader, st, "TMR_paramSet(RADIO_READPOWER)");
+      return map_status_ex(st);
+    }
+  }
 
   return MERCURYAPI_OK;
 }
