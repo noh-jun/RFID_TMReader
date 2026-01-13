@@ -149,7 +149,6 @@ CLion을 사용하더라도 **옵션은 CMake profile의 CMake options에 지정
 
 ## 참고 사항
 
-- MercuryAPI 원본 SDK는 직접 수정하지 않습니다.
+- MercuryAPI 원본 SDK는 Window 의존성을 직접 수정했습니다.
 - 모든 래퍼 로직은 third_party 외부에서 관리됩니다.
 - 프로젝트는 유지보수성과 확장성을 고려하여 설계되었습니다.
-- 빌드 대상 변경 시 반드시 지정된 빌드 절차를 따르십시오.
