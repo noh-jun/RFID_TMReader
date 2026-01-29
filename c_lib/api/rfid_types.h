@@ -62,6 +62,15 @@ typedef enum TMR_ErrorCode
     ECODE_TMR_ERROR_BOOT_RESPONSE         = 16777223,
 
     /* =========================================================
+     * COMMUNICATION ERROR WITH ERRNO (add: developer define)
+     * ========================================================= */
+    ECODE_TMR_ERROR_COMM_ERR_EPERM        = 16809985,   /* 0x01008001 : Operation not permitted */
+    ECODE_TMR_ERROR_COMM_ERR_ENOENT       = 16809986,   /* 0x01008002 : No such file or directory */
+    ECODE_TMR_ERROR_COMM_ERR_EIO          = 16809989,   /* 0x01008005 : I/O error */
+    ECODE_TMR_ERROR_COMM_ERR_PERMISSION_DENIED = 16809997,   /* 0x0100800D : Permission denied */
+    ECODE_TMR_ERROR_COMM_ERR_EBUSY        = 16810000,   /* 0x01008010 : Device or resource busy */
+
+    /* =========================================================
      * MESSAGE / COMMAND VALIDATION
      * ========================================================= */
     ECODE_TMR_ERROR_MSG_WRONG_NUMBER_OF_DATA        = 33554688,

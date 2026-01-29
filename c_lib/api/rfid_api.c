@@ -72,6 +72,20 @@ static const char* TMR_ErrorCodeToString(TMR_ErrorCode code) {
             return "ECODE_TMR_ERROR_BOOT_RESPONSE";
 
         /* =========================
+         * COMMUNICATION ERROR WITH ERRNO
+         * ========================= */
+        case ECODE_TMR_ERROR_COMM_ERR_EPERM:
+            return "ECODE_TMR_ERROR_COMM_ERR_EPERM";
+        case ECODE_TMR_ERROR_COMM_ERR_ENOENT:
+            return "ECODE_TMR_ERROR_COMM_ERR_ENOENT";
+        case ECODE_TMR_ERROR_COMM_ERR_EIO:
+            return "ECODE_TMR_ERROR_COMM_ERR_EIO";
+        case ECODE_TMR_ERROR_COMM_ERR_PERMISSION_DENIED:
+            return "ECODE_TMR_ERROR_COMM_ERR_PERMISSION_DENIED";
+        case ECODE_TMR_ERROR_COMM_ERR_EBUSY:
+            return "ECODE_TMR_ERROR_COMM_ERR_EBUSY";
+
+        /* =========================
          * MESSAGE / COMMAND ERRORS
          * ========================= */
         case ECODE_TMR_ERROR_MSG_WRONG_NUMBER_OF_DATA:
